@@ -1,3 +1,13 @@
+@charset "utf-8";
+
+/******* Fonts Import Start **********/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+p,h1,h2,h3,h4,h5,h6,span,a{
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif !important;
+}
+
 .parallax {
   /* The image used */
   background-image: url("https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -11,6 +21,8 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
 
 .sliders .tap:before {
   position: absolute;
@@ -60,6 +72,10 @@
 #tap-3:checked ~ .inner-part .content-3 {
   opacity: 1;
   margin-left: 0px;
-  z-index: 100;
+  z-index: 20;
   transition-delay: 0.3s;
 }
+
+
+
+

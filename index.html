@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="carousel.css">
     <title>Blog</title>
 </head>
 
-<body class="font-sans">
+<body class="font-sans relative">
+
+  
+  <div class="fixed bg-black w-full h-full z-40 shadow-inner flex justify-center items-center opacity-0" id="modal">
+    <p class="text-white absolute right-4 top-2 font-semibold text-4xl cursor-pointer p-2" id="closeModal">&times;</p>
+    <div class="z-50 absolute bg-white p-2 max-w-xl max-h-lg flex justify-center" id="content">
+    </div>
+  </div>
 
     <header class="h-screen">
       <div class="parallax">
@@ -21,33 +30,98 @@
     </header>
   
     <main>
+
       <section class="min-h-screen pb-20">
         <div class="md:w-10/12 w-full m-auto md:x-0 px-6 relative">
-          <h1 class="font-medium md:text-2xl text-2xl text-center md:text-left pt-16 mb-2">About me</h1>
-          <div class="flex md:flex hidden space-x-0">
-            <div class="h-2 w-14 bg-indigo-600 rounded-r-none rounded-md"></div>
-            <div class="h-2 w-56 bg-gray-200 rounded-l-none rounded-md"></div>
+          <h1 class="font-medium text-2xl font-bold text-center md:text-left pt-16 mb-2"> About me </h1>
+          <div class="flex flex-col md:flex hidden">
+            <div class="h-2 w-24 bg-indigo-600 rounded-sm mb-1"></div>
+            <div class="h-2 w-12 bg-indigo-500 rounded-sm"></div>
           </div>
+          
   
-          <div class="mt-14 h-80 relative shadow-2xl bg-white rounded-lg" id="blog-card">
+            <div class="inner-part mt-14 flex items-center p-8  rounded-xl shadow-md">
+              <div class="relative w-4/12 h-80 overflow-hidden rounded-xl object-cover">
+                <img class="absolute -top-10" src="img/me/yo1.jpg" />
+              </div>
+              <div class="w-8/12 px-10">
+                <div class="flex items-center mb-3">
+                  <p class="text-2xl inline">
+                    <i class="text-red-500 text-sm fa fa-map-marker mr-3" aria-hidden="true"></i>
+                  </p> 
+                  <p> Salina Cruz, Oaxaca</p>
+                </div>
+
+                <div class="flex items-center mb-3">
+                  <p class="text-2xl inline">
+                    <i class="text-red-500 text-sm fa fa-home mr-3" aria-hidden="true"></i>
+                  </p> 
+                  <p> Isla Mujeres, Q.Roo</p>
+                </div>
+
+                <div class="flex items-center mb-3">
+                  <p class="text-2xl inline">
+                    <i class="text-red-500 text-sm fa fa-calendar mr-3" aria-hidden="true"></i>
+                  </p> 
+                  <p> April 21st 1999</p>
+                </div>
+
+                <div class="flex items-center mb-3">
+                  <p class="text-2xl inline">
+                    <i class="text-red-500 text-sm fa fa-phone mr-3" aria-hidden="true"></i>
+                  </p> 
+                  <p> 9984181120</p>
+                </div>
+
+                <div class="flex items-center mb-3">
+                  <p class="text-2xl inline">
+                    <i class="text-red-500 text-sm fa fa-graduation-cap mr-3" aria-hidden="true"></i>
+                  </p> 
+                  <p> I am currently studying systems engineering</p>
+                </div>
+                
+
+                <div class="flex items-center mb-3">
+                  <p class="text-2xl inline">
+                    <i class="text-red-500 text-sm fa fa-gamepad mr-3" aria-hidden="true"></i>
+                  </p> 
+                  <p> My favourite hobby is playing videogames</p>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section class="min-h-screen pb-20" id="start">
+        <div class="md:w-10/12 w-full m-auto md:x-0 px-6 relative">
+          <h1 class="font-medium text-2xl font-bold text-center md:text-left pt-16 mb-2"> Where I have been on vacation </h1>
+          <div class="flex flex-col md:flex hidden">
+            <div class="h-2 w-24 bg-indigo-600 rounded-sm mb-1"></div>
+            <div class="h-2 w-12 bg-indigo-500 rounded-sm"></div>
+          </div>
+
+  
+          <div class="mt-14 h-80 relative bg-white rounded-xl shadow-md" id="blog-card">
             <input class="hidden" type="radio" name="select" id="tap-1" checked />
             <input class="hidden" type="radio" name="select" id="tap-2" />
             <input class="hidden" type="radio" name="select" id="tap-3" />
   
             <input class="hidden" type="checkbox" name="" id="imgTap" />
   
-            <div class="sliders absolute flex space-x-5 right-8 z-50 bottom-9">
+            <div class="sliders absolute flex space-x-5 z-30 right-8 bottom-9">
               <label for="tap-1" class="tap tap-1 cursor-pointer w-14 h-2.5 relative rounded-xl bg-gray-300 hover:bg-gray-400"> </label>
               <label for="tap-2" class="tap tap-2 cursor-pointer w-14 h-2.5 relative rounded-xl bg-gray-300 hover:bg-gray-400"> </label>
               <label for="tap-3" class="tap tap-3 cursor-pointer w-14 h-2.5 relative rounded-xl bg-gray-300 hover:bg-gray-400"> </label>
             </div>
             <div class="inner-part flex absolute items-center p-8">
               <label for="imgTap" class="img h-64">
-                <img class="img-1 rounded-lg" src="https://1.bp.blogspot.com/-Ga-e_GzGxRE/XzzUK472nzI/AAAAAAAAAQE/PeG1J3CuAncX3Q-tzaV8hYSf4oGVOMVygCLcBGAsYHQ/s640/Cara%2BDownload%2BFile%2Bdi%2BGoogle%2BDrive%2Byang%2BLimit%2BAkses.png" />
+                <img class="img-1 rounded-md" src="https://1.bp.blogspot.com/-Ga-e_GzGxRE/XzzUK472nzI/AAAAAAAAAQE/PeG1J3CuAncX3Q-tzaV8hYSf4oGVOMVygCLcBGAsYHQ/s640/Cara%2BDownload%2BFile%2Bdi%2BGoogle%2BDrive%2Byang%2BLimit%2BAkses.png" />
               </label>
               <div class="content content-1">
-                <div class="title text-xl mb-6 font-semibold">Contenido 1</div>
-                <div class="text-md">Lorem ipsu m dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</div>
+                <h3 class="text-xl font-semibold mb-3">Content 1</h3>
+                <p class="text">Lorem ipsu m dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</p>
               </div>
             </div>
             <div class="inner-part flex absolute items-center p-8">
@@ -55,8 +129,8 @@
                 <img class="img-2" src="https://1.bp.blogspot.com/-Ga-e_GzGxRE/XzzUK472nzI/AAAAAAAAAQE/PeG1J3CuAncX3Q-tzaV8hYSf4oGVOMVygCLcBGAsYHQ/s640/Cara%2BDownload%2BFile%2Bdi%2BGoogle%2BDrive%2Byang%2BLimit%2BAkses.png" />
               </label>
               <div class="content content-2">
-                <div class="title text-xl mb-6 font-semibold">Contenido 2</div>
-                <div class="text">Lorem ipsu m dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</div>
+                <h3 class="text-xl font-semibold mb-3">Content 1</h3>
+                <p class="text">Lorem ipsu m dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</p>
               </div>
             </div>
             <div class="inner-part flex absolute items-center p-8">
@@ -64,17 +138,123 @@
                 <img class="img-3" src="https://1.bp.blogspot.com/-Ga-e_GzGxRE/XzzUK472nzI/AAAAAAAAAQE/PeG1J3CuAncX3Q-tzaV8hYSf4oGVOMVygCLcBGAsYHQ/s640/Cara%2BDownload%2BFile%2Bdi%2BGoogle%2BDrive%2Byang%2BLimit%2BAkses.png" />
               </label>
               <div class="content content-3">
-                <div class="title text-xl mb-6 font-semibold">Contenido 3</div>
-                <div class="text">Lorem ipsu m dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</div>
+                <h3 class="text-xl font-semibold mb-3">Content 1</h3>
+                <p class="text">Lorem ipsu m dolor sit amet, consectetur adipisicing elit. Explicabo animi atque aliquid pariatur voluptatem numquam, quisquam. Neque est voluptates doloribus!</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <section class="min-h-screen pb-20">
+        <div class="md:w-10/12 w-full m-auto md:x-0 px-6 relative">
+          <h1 class="font-medium md:text-2xl text-2xl text-center md:text-left pt-16 mb-2"> My favourites memes </h1>
+          <div class="flex md:flex hidden space-x-0">
+            <div class="h-2 w-32 bg-indigo-600 rounded-r-none rounded-md"></div>
+            <div class="h-2 w-60 bg-gray-200 rounded-l-none rounded-md"></div>
+          </div>
+
+
+          <div class="relative  mt-16">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-400 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-xl w-full"></div>
+            <div class="relative p-12 px-8 bg-white rounded-xl shadow-md">
+              <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-8 px-10 py-8 space-x-6">
+
+                <div class="row-start-1 col-start-1 flex justify-center items-center w-6/6 cursor-pointer h-52 transform scale-110 hover:-rotate-6 transition-transform duration-700 ease-in-out overflow-hidden rounded-xl">
+                  <img src="img/meme1.jpg" alt="" onclick="openModal('img/meme1.jpg')" class="h-full w-full object-fill">
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+      </section>
+
+
+      <section class="min-h-screen pb-20 game-section">
+        <div class="md:w-10/12 w-full m-auto md:x-0 px-6 relative ">
+          <h1 class="font-medium text-2xl font-bold text-center md:text-left pt-16 mb-2"> What I like </h1>
+          <div class="flex flex-col md:flex hidden">
+            <div class="h-2 w-24 bg-indigo-600 rounded-sm mb-1"></div>
+            <div class="h-2 w-12 bg-indigo-500 rounded-sm"></div>
+          </div>
+          
+          <div class="owl-carousel custom-carousel owl-theme mt-2  absolute overflow-x-hidden relative pt-16">
+            <div class="item active rounded-xl" style="background-image: url(img/aida.jpg);">
+              <div class="item-desc">
+                <h3 class="text-2xl font-bold mb-2">Aida</h3>
+                <p>A spanish sitcom</p>
+              </div>
+            </div>
+            <div class="item active rounded-xl" style="background-image: url(img/annafrank.jpg);">
+              <div class="item-desc">
+                <h3 class="text-2xl font-bold mb-2">The daity of Anne Frank</h3>
+                <p>This is the first English book I am currently reading. I am really interested on World War ll</p>
+              </div>
+            </div>
+            <div class="item active rounded-xl" style="background-image: url(img/cruz\ azul.png);">
+              <div class="item-desc">
+                <h3 class="text-2xl font-bold mb-2">Cruz Azul Football Team</h3>
+                <p>I have supported them since I was a child</p>
+              </div>
+            </div>
+            <div class="item active rounded-xl" style="background-image: url(img/nina\ zilli.jpg);">
+              <div class="item-desc">
+                <h3 class="text-2xl font-bold mb-2">Nina Zilli</h3>
+                <p>A great Italian singer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="min-h-screen pb-20">
+        <div class="md:w-10/12 w-full m-auto md:x-0 px-6 relative">
+          <h1 class="font-medium text-2xl font-bold text-center md:text-left pt-16 mb-2"> What I do to make the world a better place </h1>
+          <div class="flex flex-col md:flex hidden">
+            <div class="h-2 w-24 bg-indigo-600 rounded-sm mb-1"></div>
+            <div class="h-2 w-12 bg-indigo-500 rounded-sm"></div>
+          </div>
+
+          <div class="mt-10 flex justify-between p-4 bg-gradient-to-r from-green-600 to-indigo-300 space-x-8 rounded-md">
+            <div class="bg-white rounded-md overflow-hidden">
+              <div class="h-52 w-80 relative animate-pulse">
+                <img src="img/world/walk.jpg" alt="" class="h-full w-full object-fill absolute">
+              </div>
+              <div class="p-6 px-4">
+                <h3 class="text-lg font-semibold mb-2 text-gray-500 animate-pulse">Walk</h3>
+                <p class="animate-pulse">Walking has many advantages</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-md overflow-hidden">
+              <div class="h-52 w-80 relative animate-pulse">
+                <img src="img/world/paperless.jpg" alt="" class="h-full w-full object-fill absolute">
+              </div>
+              <div class="p-6 px-4 w-80 animate-pulse">
+                <h3 class="text-lg font-semibold mb-2 text-gray-500">Use less papper</h3>
+                <p>The last time I use paper for school was 2 years ago</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-md overflow-hidden">
+              <div class="h-52 w-80 relative animate-pulse">
+                <img src="img/world/water.jpg" alt="" class="h-full w-full object-fill absolute">
+              </div>
+              <div class="p-6 px-4 animate-pulse">
+                <h3 class="text-lg font-semibold mb-2 text-gray-500">Saving water</h3>
+                <p>Saving water is as important as education</p>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+      </section>
+
     </main>
 
   </body>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="index.js"></script>
 
 </html>
